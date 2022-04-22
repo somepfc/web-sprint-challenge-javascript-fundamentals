@@ -17,7 +17,7 @@ function myFunction() {
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// - it is because nestedFunction is inside myFunction, it has access  to information in it's surrounding scope
 
 
 
@@ -30,9 +30,12 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  let arr = 0
+  for (let i=0; i <= num; i++){
+     arr = arr + i;
+  }
+  return arr;
   }
  
 
@@ -60,8 +63,12 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(arr){
+    let displayNames = [];
+    arr.forEach(function(i) {
+     return displayNames.push(`name: ${i.animal_name}, scientific: ${i.scientific_name}`);
+    });
+    return displayNames;
   }
   
 
@@ -75,8 +82,12 @@ const zooAnimals = [
   💡 NOTE: Do some research for other methods that can help help you
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(arr){
+    let newarr= []
+   let yes= arr.map((i) => {
+     return newarr.push((i.animal_name).toLowerCase());
+    })
+    return newarr;
   }
   
   
@@ -88,8 +99,13 @@ const zooAnimals = [
   3. Return this new array
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(arr){
+    let nwf = arr.filter((i)=>{
+      if (i.population < 5){
+        return arr;
+      }
+    })
+    return nwf;
   }
   
 
@@ -102,8 +118,11 @@ const zooAnimals = [
   💡 NOTE: Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count. Check MDN/W3Schools for syntax!
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(arr){
+   let tp = arr.reduce((acc, i)=>{
+      return acc + i.population;
+    },0 )
+    return tp;
   }
   
   
@@ -116,8 +135,8 @@ const zooAnimals = [
     💡 NOTE: The tests for 'consume' will pass if it is created correctly and also after you correctly complete the functions 'add' and 'greeting' below in Step 2.
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
+  function consume(a, b, cb){
+    return cb(a,b);
   }
  
   
@@ -128,8 +147,9 @@ const zooAnimals = [
  2. Return the sum of those numbers
  */
 
-function add(/*Your Code Here */){
-    /*Your Code Here*/
+function add(num1, num2){
+  let sum = num1+ num2;
+    return sum;
   }
 
 
@@ -149,8 +169,8 @@ function multiply(/*Your Code Here */){
 💡 NOTE: The string returned must match the format above or the test will not pass!
 */
 
-function greeting(/*Your Code Here */){
-   return /*Your Code Here */
+function greeting(fn, ln){
+   return `Hello ${fn} ${ln}, nice to meet you!`;
   }
   
   
